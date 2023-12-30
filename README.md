@@ -10,10 +10,10 @@ This code prints a set of moves to get the big (red, 2x2) block from a given sta
 where it is positioned at the exit slot. The starting position is arbitrary and can easily be changed
 
 ## Starting Position
-![start pos](https://images/PXL_20231230_164536931.jpg
+![start pos](images/PXL_20231230_164536931.jpg
 
 ## Goal Position
-![end pos](https://images/PXL_20231230_164624583.jpg
+![end pos](images/PXL_20231230_164624583.jpg
 
 ## Piece Colors
 - R(ed), 2x2, the piece to be moved to the exit
