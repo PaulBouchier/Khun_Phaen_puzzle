@@ -22,7 +22,10 @@ where it is positioned at the exit slot. The starting position is arbitrary and 
 - B(lue), 1x1, the unit-size square pieces
 
 ## Running
-Run the program by executing Khun_Phaen_driver.py.
+Run the program by executing Khun_Phaen_driver.py. The program prints a list of moves
+to solve the puzzle. See the file 120moveSolution.txt for the moves from start to goal.
+Simple changes to the program can cause it to print other (longer) solutions, or solutions
+from different starting BoardStates.
 
 Different start states can be configured by defining new start_keys in Khun_Phaen_driver.py.
 
