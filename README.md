@@ -58,6 +58,23 @@ discover the graph that connects the BoardStates (vertices) with moves (edges). 
 graph is fully explored (no more moves can be made which result in undiscovered BoardStates)
 it calls bfs_sp() to find the shortest path from start to goal.
 
+### Combinatorics and swizzling
+The initial, naiive implementation searched all permutations of all pieces, treating the 24
+variations on placement of each of Blue and Yellow as unique. This implementation took 45 minutes
+to explore one million board states, and still hadn't found any where Red moved below row 2. The
+combinatorics exploded exponentially, and the graph quickly became much larger than I'd expected.
+Some optimization was needed.
+
+It is obvious that if you swap two blue's, the resulting board state is
+equivalent in terms of the moves available from the two board states. In
+fact, there are 24 permutations of Blue pieces, and 24 of yellow, and
+they can be treated as aliases of one another. The optimization was to
+"swizzle" the Blues and Yellows to an alias where B1 is lower or left of
+B2, B2 is lower or left of B3, and so forth.
+Then the possible moves were evaluated from the swizzled
+positions. This optimization resulted in finding the first solution
+after only 15,000 board states had been explored.
+
 ## Puzzle Data
 - The puzzle has 25954 unique BoardStates
 - There are 964 unique paths from the standard starting position to the goal. The shortest path
